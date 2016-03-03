@@ -14,5 +14,6 @@ Suggests:
 Depends:
     R (>= 3.0.0)
 Imports:
-    htmlwidgets
+    htmlwidgets,
+    htmltools
 RoxygenNote: 5.0.1

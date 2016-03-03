@@ -1,6 +1,5 @@
 #' Make a radviz
 #'
-#' @import htmlwidgets
 #' @param data \code{data.frame} to use
 #' @param draw_links whether to draw links or not
 #' @param zoom_factor gets the dimension nodes on a bigger radius than the panel, to pull nodes away from the center
@@ -82,11 +81,18 @@ add_dimensions <- function(rv, dimensions) {
 #' @export
 add_tooltip <- function(rv, formatter=NULL) {
 
-  if (is.null(formatter)) {
-    rv$x$useTooltip <- FALSE
-    rv$x$tooltipFormatter <- htmltools::JS(formatter)
+  if (!is.null(formatter)) {
+    rv$x$tooltipFormatter <- htmlwidgets::JS(formatter)
+    rv$x$useTooltip <- TRUE
   }
 
   rv
 
+}
+
+radviz_html <- function(id, style, class, ...){
+  htmltools::tagList(
+    htmltools::tags$div(id = id, class = class),
+    htmltools::tags$div(id="tooltip")
+  )
 }

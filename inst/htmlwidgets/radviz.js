@@ -34,9 +34,6 @@ HTMLWidgets.widget({
           rvConfig.tooltipFormatter = x.tooltipFormatter;
         }
 
-dbg = rvConfig;
-dbg_dat = data;
-
         var radviz = radvizComponent()
                        .config(rvConfig)
                        .on('panelEnter', function() {

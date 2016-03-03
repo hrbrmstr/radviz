@@ -1,5 +1,6 @@
 #' A package to make radviz
 #'
+#' @import htmlwidgets htmltools
 #' @name radviz-package
 #' @docType package
 #' @rdname radviz-package

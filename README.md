@@ -5,6 +5,10 @@ See <https://github.com/biovisualize/radviz> for more info.
 
 This is a super-basic widget that's looking for a home (i.e pls take over development! :-)
 
+NOTE: The tooltip `<div>` is not uniquely id'd so that means weird behavior with multiples of these on one page.
+
+File an issue with the parent JS lib if you want to work on tooltips.
+
 The following functions are implemented:
 
 - `add_color`:	Add color to the charts
@@ -43,7 +47,8 @@ radviz(iris, diameter=600, margin=100,
        width=600, height=600) %>% 
   add_dimensions(c('Sepal.Length', 'Sepal.Width', 
                    'Petal.Length', 'Petal.Width')) %>% 
-  add_color("Species")
+  add_color("Species") %>% 
+  add_tooltip("function(d){ return 'Petal width: ' + d['Petal.Length']; }")
 ```
 
 ![](radviz.png)
@@ -59,7 +64,7 @@ date()
 ```
 
 ```
-## [1] "Thu Mar  3 12:56:27 2016"
+## [1] "Thu Mar  3 13:08:07 2016"
 ```
 
 ```r
