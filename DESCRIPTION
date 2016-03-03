@@ -1,0 +1,18 @@
+Package: radviz
+Type: Package
+Title: radviz title goes here
+Version: 0.1.0
+Date: 2016-03-03
+Author: Bob Rudis (@hrbrmstr)
+Maintainer: Bob Rudis <bob@rudis.net>
+Description: radviz description goes here
+URL: http://github.com/hrbrmstr/radviz
+BugReports: https://github.com/hrbrmstr/radviz/issues
+License: AGPL + file LICENSE
+Suggests:
+    testthat
+Depends:
+    R (>= 3.0.0)
+Imports:
+    htmlwidgets
+RoxygenNote: 5.0.1

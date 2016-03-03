@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+}
+.panel {
+    stroke: black;
+    fill: white;
+}
+
+.bg {
+    fill: white;
+}
+
+.link {
+    stroke: silver;
+    stroke-opacity: 0.05
+}
+
+.dot {
+    fill-opacity: 0.5;
+}
+
+.label-node {
+    fill: silver;
+}
+
+.active {
+    stroke: black;
+}
+
+.label {
+    fill: gray;
+    pointer-events: none;
+}
+
+#tooltip {
+    font-size: 12px;
+    margin-top: 22px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+}
+
+#tooltip h1 {
+    font-size: 14px;
+    margin: 0;
+}
