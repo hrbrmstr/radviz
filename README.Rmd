@@ -47,7 +47,7 @@ packageVersion("radviz")
 
 radviz(iris, diameter=600, margin=100, 
        use_repulsion=TRUE, draw_links=TRUE, 
-       width=600, height=600) %>% 
+       width=600, height=500) %>% 
   add_dimensions(c('Sepal.Length', 'Sepal.Width', 
                    'Petal.Length', 'Petal.Width')) %>% 
   add_color("Species") %>% 

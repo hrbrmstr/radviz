@@ -1,8 +1,8 @@
 Package: radviz
 Type: Package
 Title: radviz title goes here
-Version: 0.1.0
-Date: 2016-03-03
+Version: 0.2.0
+Date: 2016-03-04
 Author: Bob Rudis (@hrbrmstr)
 Maintainer: Bob Rudis <bob@rudis.net>
 Description: radviz description goes here

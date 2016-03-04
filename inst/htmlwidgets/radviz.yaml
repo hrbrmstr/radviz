@@ -6,8 +6,8 @@ dependencies:
 - name: radviz
   src: htmlwidgets/lib/radviz
   script:
-    - ./radviz-min.js
     - ./component-utils.js
     - ./tooltip-component.js
+    - ./radviz-component.js
   stylesheet: ./radviz.css
   version: 0.1.0

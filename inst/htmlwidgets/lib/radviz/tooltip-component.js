@@ -1,4 +1,4 @@
-var tooltipComponent = function(tooltipNode){
+var tooltipComponent = function(tooltipNode) {
 
     var root = d3.select(tooltipNode)
         .style({
@@ -6,20 +6,27 @@ var tooltipComponent = function(tooltipNode){
             'pointer-events': 'none'
         });
 
-    var setText = function(html){
+    var setText = function(html) {
         root.html(html);
         return this;
     };
-    var position = function(x, y){
-        root.style({left: x + 'px', top: y + 'px'});
+    var position = function(x, y) {
+        root.style({
+            left: x + 'px',
+            top: y + 'px'
+        });
         return this;
     };
-    var show = function(){
-        root.style({display: 'block'});
+    var show = function() {
+        root.style({
+            display: 'block'
+        });
         return this;
     };
-    var hide = function(){
-        root.style({display: 'none'});
+    var hide = function() {
+        root.style({
+            display: 'none'
+        });
         return this;
     };
 

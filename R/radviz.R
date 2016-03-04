@@ -89,10 +89,3 @@ add_tooltip <- function(rv, formatter=NULL) {
   rv
 
 }
-
-radviz_html <- function(id, style, class, ...){
-  htmltools::tagList(
-    htmltools::tags$div(id = id, class = class),
-    htmltools::tags$div(id="tooltip")
-  )
-}
