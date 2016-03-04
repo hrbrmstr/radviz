@@ -29,6 +29,8 @@ radviz(data, draw_links = TRUE, zoom_factor = 1, dot_radius = 4,
 Make a radviz
 }
 \examples{
+# motor vehicles
+
 mtcars_1 <- dplyr::add_rownames(mtcars, var="car")
 
 radviz(mtcars_1, diameter=600, margin=100,
@@ -38,5 +40,17 @@ radviz(mtcars_1, diameter=600, margin=100,
                    "qsec", "vs", "am", "gear", "carb")) \%>\%
   add_color("cyl") \%>\%
   add_tooltip("function(d) { return d.car; }")
+
+# motor vehicles deaths
+
+cardeaths <- data.frame(as.matrix(Seatbelts),
+                        year=substring(zoo::as.yearmon(time(Seatbelts)), 5, 7))
+
+radviz(cardeaths, diameter=600, margin=100,
+       use_repulsion=FALSE, draw_links=FALSE,
+       width=600, height=500) \%>\%
+  add_dimensions(c("DriversKilled", "PetrolPrice", "VanKilled")) \%>\%
+  add_color("year") \%>\%
+  add_tooltip("function(d){ return d.year; }")
 }
 
