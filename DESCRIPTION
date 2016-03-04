@@ -1,6 +1,6 @@
 Package: radviz
 Type: Package
-Title: radviz title goes here
+Title: htmlwidget wrapper for the radviz javascript library
 Version: 0.2.0
 Date: 2016-03-04
 Author: Bob Rudis (@hrbrmstr)
@@ -10,7 +10,8 @@ URL: http://github.com/hrbrmstr/radviz
 BugReports: https://github.com/hrbrmstr/radviz/issues
 License: AGPL + file LICENSE
 Suggests:
-    testthat
+    testthat,
+    dplyr
 Depends:
     R (>= 3.0.0)
 Imports:

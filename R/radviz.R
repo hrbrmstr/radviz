@@ -9,6 +9,16 @@
 #' @param margin margin around the circular panel
 #' @param width,height height & width of the widget
 #' @export
+#' @examples
+#' mtcars_1 <- dplyr::add_rownames(mtcars, var="car")
+#'
+#' radviz(mtcars_1, diameter=600, margin=100,
+#'        use_repulsion=TRUE, draw_links=TRUE,
+#'        width=600, height=500) %>%
+#'   add_dimensions(c("mpg", "cyl", "disp", "hp", "drat", "wt",
+#'                    "qsec", "vs", "am", "gear", "carb")) %>%
+#'   add_color("cyl") %>%
+#'   add_tooltip("function(d) { return d.car; }")
 radviz <- function(data,
                    draw_links=TRUE,
                    zoom_factor=1,
@@ -39,53 +49,5 @@ radviz <- function(data,
     height = height,
     package = 'radviz'
   )
-
-}
-
-#' Add color to the charts
-#'
-#' @param rv radviz object
-#' @param color_accessor name of column/dimension to use for coloring
-#' @param palette a vector of D3 colors that you wish to use (ordinal range that should
-#'        match the number of categoris in \code{color_accessor} (optional)
-#' @export
-add_color <- function(rv, color_accessor, palette=NULL) {
-
-  if (!is.null(palette)) {
-    rv$x$usePalette <- TRUE
-    rv$x$palette <- palette;
-  }
-
-  rv$x$colorAccessor <- color_accessor
-
-  rv
-
-}
-
-#' Add the columns (dimensions) you wish to map in the radviz
-#'
-#' @param rv radviz object
-#' @param dimesions character vector of column names
-#' @export
-add_dimensions <- function(rv, dimensions) {
-  rv$x$dimensions <- dimensions
-  rv
-}
-
-#' Add a tooltip to a radviz widget
-#'
-#' @param rv radviz object
-#' @param formatter if \code{NULL} no tooltip will be added. Should be an atomic
-#'        character vector with javsascript code. It will be wrapped in a call to
-#'        \code{htmlwidgets::JS} (see examples)
-#' @export
-add_tooltip <- function(rv, formatter=NULL) {
-
-  if (!is.null(formatter)) {
-    rv$x$tooltipFormatter <- htmlwidgets::JS(formatter)
-    rv$x$useTooltip <- TRUE
-  }
-
-  rv
 
 }
