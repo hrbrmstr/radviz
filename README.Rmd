@@ -12,16 +12,12 @@ See <https://github.com/biovisualize/radviz> for more info.
 
 This is a super-basic widget that's looking for a home (i.e pls take over development! :-)
 
-NOTE: The tooltip `<div>` is not uniquely id'd so that means weird behavior with multiples of these on one page.
-
-File an issue with the parent JS lib if you want to work on tooltips.
-
 The following functions are implemented:
 
-- `add_color`:	Add color to the charts
-- `add_dimensions`:	Add the columns (dimensions) you wish to map in the radviz
-- `add_tooltip`:	Add a tooltip to a radviz widget
 - `radviz`:	Make a radviz
+- `add_dimensions`:	Add the columns (dimensions) you wish to map in the radviz
+- `add_color`:	Add color to the charts
+- `add_tooltip`:	Add a tooltip to a radviz widget
 
 The following data sets are included:
 
@@ -67,4 +63,3 @@ date()
 
 test_dir("tests/")
 ```
-

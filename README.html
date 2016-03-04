@@ -111,14 +111,12 @@ $(document).ready(function () {
 <p><code>radviz</code> : an htmlwidget for <a href="https://github.com/biovisualize/radviz" class="uri">https://github.com/biovisualize/radviz</a></p>
 <p>See <a href="https://github.com/biovisualize/radviz" class="uri">https://github.com/biovisualize/radviz</a> for more info.</p>
 <p>This is a super-basic widget that’s looking for a home (i.e pls take over development! :-)</p>
-<p>NOTE: The tooltip <code>&lt;div&gt;</code> is not uniquely id’d so that means weird behavior with multiples of these on one page.</p>
-<p>File an issue with the parent JS lib if you want to work on tooltips.</p>
 <p>The following functions are implemented:</p>
 <ul>
-<li><code>add_color</code>: Add color to the charts</li>
-<li><code>add_dimensions</code>: Add the columns (dimensions) you wish to map in the radviz</li>
-<li><code>add_tooltip</code>: Add a tooltip to a radviz widget</li>
 <li><code>radviz</code>: Make a radviz</li>
+<li><code>add_dimensions</code>: Add the columns (dimensions) you wish to map in the radviz</li>
+<li><code>add_color</code>: Add color to the charts</li>
+<li><code>add_tooltip</code>: Add a tooltip to a radviz widget</li>
 </ul>
 <p>The following data sets are included:</p>
 <div id="installation" class="section level3">
@@ -131,10 +129,10 @@ $(document).ready(function () {
 
 # current verison
 packageVersion(&quot;radviz&quot;)</code></pre>
-<pre><code>## [1] '0.1.0'</code></pre>
+<pre><code>## [1] '0.2.0'</code></pre>
 <pre class="r"><code>radviz(iris, diameter=600, margin=100, 
        use_repulsion=TRUE, draw_links=TRUE, 
-       width=600, height=600) %&gt;% 
+       width=600, height=500) %&gt;% 
   add_dimensions(c('Sepal.Length', 'Sepal.Width', 
                    'Petal.Length', 'Petal.Width')) %&gt;% 
   add_color(&quot;Species&quot;) %&gt;% 
@@ -147,7 +145,7 @@ packageVersion(&quot;radviz&quot;)</code></pre>
 library(testthat)
 
 date()</code></pre>
-<pre><code>## [1] &quot;Thu Mar  3 13:08:07 2016&quot;</code></pre>
+<pre><code>## [1] &quot;Fri Mar  4 17:48:47 2016&quot;</code></pre>
 <pre class="r"><code>test_dir(&quot;tests/&quot;)</code></pre>
 <pre><code>## testthat results ========================================================================================================
 ## OK: 0 SKIPPED: 0 FAILED: 0</code></pre>
