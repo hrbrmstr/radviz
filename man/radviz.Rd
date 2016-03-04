@@ -28,4 +28,15 @@ radviz(data, draw_links = TRUE, zoom_factor = 1, dot_radius = 4,
 \description{
 Make a radviz
 }
+\examples{
+mtcars_1 <- dplyr::add_rownames(mtcars, var="car")
+
+radviz(mtcars_1, diameter=600, margin=100,
+       use_repulsion=TRUE, draw_links=TRUE,
+       width=600, height=500) \%>\%
+  add_dimensions(c("mpg", "cyl", "disp", "hp", "drat", "wt",
+                   "qsec", "vs", "am", "gear", "carb")) \%>\%
+  add_color("cyl") \%>\%
+  add_tooltip("function(d) { return d.car; }")
+}
 
