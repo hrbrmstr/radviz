@@ -10,6 +10,17 @@ HTMLWidgets.widget({
     return {
 
       renderValue: function(x) {
+        
+        /* fix multiple tooltip problem
+            for standalone we will need to explicitly
+            assign position : relative for our
+            htmlwidget container div
+            since radviz tooltip needs absolute positioning
+            
+          I tested in tagList, rmarkdown, and shiny
+        */
+        el.style.position = "relative";
+
 
         var data = HTMLWidgets.dataframeToD3(x.data);
 
