@@ -1,45 +1,42 @@
-body {
-    font-family: sans-serif;
-}
-.panel {
+.radviz .panel {
     stroke: black;
     fill: white;
 }
 
-.bg {
+.radviz .bg {
     fill: white;
 }
 
-.link {
+.radviz .link {
     stroke: silver;
     stroke-opacity: 0.05
 }
 
-.dot {
+.radviz dot {
     fill-opacity: 0.5;
 }
 
-.label-node {
+.radviz label-node {
     fill: silver;
 }
 
-.active {
+.radviz .active {
     stroke: black;
 }
 
-.label {
+.radviz .label {
     fill: gray;
     pointer-events: none;
 }
 
-#tooltip {
+.radviz-tooltip {
     font-size: 12px;
     margin-top: 22px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
 }
 
-#tooltip h1 {
+.radviz-tooltip h1 {
     font-size: 14px;
     margin: 0;
 }

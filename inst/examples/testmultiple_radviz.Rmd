@@ -1,0 +1,31 @@
+---
+title: "radviz_testmultiple"
+author: "Kent Russell"
+date: "March 5, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(htmltools)
+library(radviz)
+
+tagList(
+  lapply(
+    1:2,
+    function(x){
+      radviz(iris, diameter=600, margin=100, 
+         use_repulsion=TRUE, draw_links=TRUE, 
+         width=600, height=500
+      ) %>% 
+        add_dimensions(c('Sepal.Length', 'Sepal.Width', 
+                         'Petal.Length', 'Petal.Width')) %>% 
+        add_color("Species") %>% 
+        add_tooltip("function(d){ return 'Petal width: ' + d['Petal.Length']; }")
+    }
+  )
+)
+```
